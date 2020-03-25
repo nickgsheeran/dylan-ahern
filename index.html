@@ -1,0 +1,52 @@
+<!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>slideshow</title>
+<meta name="description" content="Dylan slideshow">
+<meta name="Studio Nick" content="">
+
+<!-- Mobile Specific Metas
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="style.css">
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="script.js"></script>
+
+
+<body>
+    <div class="nav">
+        <h1 id="title" onclick="contact_switch()">dylan ahern <span id="nav_info"></span></h1>
+    </div>
+    <div class="container">
+        <div class="left" onclick="countdown()">
+                <p>previous title</p>
+        </div>
+        <div class="project-total">
+            <div class="project-hero">
+                <img id="image" onclick="change_image()">
+            </div>
+            <div class="project-info">
+                <div id="contact">
+                    <h1>dylanpahern@gmail.com</h1>
+                </div>
+                <div class="project-title">
+                    <p id="title-holder"></p>
+                </div>
+                <div class="project-det">
+                    <p id="mat"></p>
+                    <p id="dim"></p>
+                    <p id="year"></p>
+                </div>
+                <div class="project-num">
+                    <p><span id="image_num"></span>/<span id="image_count"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="right" onclick="countup()">
+            <p>next title</p>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,224 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 1.875em;
+        
+    line-height: 1;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-size: .875em;
+    line-height: 1;
+}
+
+a {
+    margin: 0;
+/*    font-size: .875em;*/
+    line-height: 1;
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+#title {
+    position: absolute;
+    top: 15;
+}
+
+#count {
+}
+
+.underline {
+    text-decoration: underline;
+/*
+    border-bottom: 2px;
+    border-bottom-color: black;
+    border-spacing: 2px;
+*/
+}
+
+.nav {
+    position: fixed;
+    display: block;
+    box-sizing: border-box;
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 2400px;
+    height: 10%;
+    
+    margin: 0;
+    padding-bottom: 30px;
+    padding-left: 16.667%;
+    padding-right: 1.5em;
+    
+/*    background: azure;*/
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    
+/*    background-color: lightpink;*/
+}
+
+.left {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    
+    flex-basis: 16.667%;
+    
+    padding-left: 1.5em;
+    
+/*    background: green;*/
+}
+
+.right {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-end;
+    
+    flex-basis: 16.667%;
+    
+    padding-right: 1.5em;
+    
+/*    background: red;*/
+}
+
+.project-total {
+    display: inline-block;
+    box-sizing: border-box;
+    height: auto;
+    width: 66.667%;
+    
+    padding: 0;
+    
+/*    background: yellow;*/
+}
+
+.project-hero {
+    display: inherit;
+    width: 100%;
+    height: calc(100% - 85px);
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    
+    object-position: 0 0;
+    object-fit: contain;
+}
+
+.project-info {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    
+    width: 66.667%;
+        
+/*    background: azure;*/
+}
+
+#contact {
+    display: none;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 100;
+    background: white;
+}
+
+.project-title {
+    display: inline-block;
+    width: 25%;
+
+    overflow: hidden;
+    height: 60px;
+
+/*    background: white;*/
+}
+
+.project-det {
+    display: inline-block;
+    width: 37.5%;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+    overflow: hidden;
+    height: 60px;
+    
+/*    background: white;*/
+}
+
+.project-num {
+    display: inline-block;
+    width: 12.5%;
+
+    overflow: hidden;
+    height: 60px;
+}
+
+.bio-grid {
+    position: absolute;
+    display: grid;
+    box-sizing: border-box;
+    
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1.5em;
+    
+    top: 150;
+    left: 0;
+    width: 100%;
+    height: auto;
+    
+/*    background: yellow;*/
+}
+
+.bio {
+    display: inline-block;
+    box-sizing: border-box;
+        
+    margin-left: 1.5em;
+    
+/*    background-color: azure;*/
+}
+
+.index {
+    display: inline-block;
+    box-sizing: border-box;
+    
+    height: 200px;
+    
+    margin-right: 1.5em;
+    
+/*    background-color: blue;*/
+}
+
+.index-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1.5em;
+
+/*    background: green;*/
+}
