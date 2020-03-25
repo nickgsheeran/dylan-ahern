@@ -79,7 +79,7 @@ function update_project() {
     document.getElementById("dim").innerHTML = project_dimensions;
     document.getElementById("year").innerHTML = project_year;
     
-    changeFont();
+//    changeFont();
     
     console.log(i, image_count);
 }
@@ -116,4 +116,7 @@ function contact_switch() {
     console.log("switched", contact);
 }
 
+window.onload = function() {
+    changeFont();
+}
 get_data_array();
