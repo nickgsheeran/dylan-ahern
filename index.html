@@ -18,19 +18,19 @@
 
 <body>
     <div class="nav">
-        <h1 id="title" onclick="contact_switch()">dylan ahern <span id="nav_info"></span></h1>
+        <h1 id="title" class="link" onclick="contact_switch()">dylan ahern <span id="nav_info"></span></h1>
     </div>
     <div class="container">
         <div class="left" onclick="countdown()">
-                <p>previous title</p>
+                <p class="link">previous</p>
         </div>
         <div class="project-total">
             <div class="project-hero">
-                <img id="image" onclick="change_image()">
+                <img id="image" class="link" onmousedown="change_image()">
             </div>
             <div class="project-info">
                 <div id="contact">
-                    <h1>dylanpahern@gmail.com</h1>
+                    <h2><a href="mailto:dylanpahern@gmail.com" target="_blank">dylanpahern@gmail.com</a></h2>
                 </div>
                 <div class="project-title">
                     <p id="title-holder"></p>
@@ -45,8 +45,8 @@
                 </div>
             </div>
         </div>
-        <div class="right" onclick="countup()">
-            <p>next title</p>
+        <div class="right link" onclick="countup()">
+            <p class="link">next</p>
         </div>
     </div>
 </body>

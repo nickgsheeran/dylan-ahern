@@ -19,7 +19,6 @@ function countdown() {
     }
     
     append_data();
-    console.log("down", project);
 }
 
 function countup() {
@@ -30,10 +29,7 @@ function countup() {
     }
     
     append_data();
-    console.log("up", project);
 }
-
-console.log(project);
 
 function get_data_array() {
 	console.log('s2');
@@ -57,12 +53,9 @@ function append_data() {
     project_materials = data_array[project][2];
     project_dimensions = data_array[project][3];
     project_year = data_array[project][4];
-    
-//    document.getElementById("image").src = image_array2[0];
-        
+            
     update_project();
     console.log('s4');
-    console.log("i=",i);
 }
 
 function update_project() {
@@ -78,15 +71,15 @@ function update_project() {
     document.getElementById("mat").innerHTML = project_materials;
     document.getElementById("dim").innerHTML = project_dimensions;
     document.getElementById("year").innerHTML = project_year;
-    
-//    changeFont();
-    
-    console.log(i, image_count);
+        
 }
 
-function change_image() {    
-    if(i >= image_count) {
-        i = 1;
+function change_image() {
+    var slide = i+1;
+    
+    if(slide == image_count) {
+        i = 0;
+        console.log("slide limit reached", image_count);
     } else {
         i++;
     }
@@ -94,9 +87,6 @@ function change_image() {
     document.getElementById("image").src = image_array2[i];    
     document.getElementById("image_num").innerHTML = i+1;
     document.getElementById("image_count").innerHTML = image_count;
-    
-    console.log(i, image_count);
-
 }
 
 function changeFont() {
@@ -112,11 +102,10 @@ function contact_switch() {
         document.getElementById("nav_info").innerHTML = "";
         document.getElementById("contact").style.display = "none";
     }
-    
-    console.log("switched", contact);
 }
 
 window.onload = function() {
     changeFont();
 }
+
 get_data_array();
