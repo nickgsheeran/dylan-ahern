@@ -1,11 +1,6 @@
-html {
-    overflow: hidden;
-}
-
 body {
     font-family: sans-serif;
     background-color: rgb(247, 248, 248);
-    overflow: hidden;
 }
 
 h1, h2 {
@@ -318,7 +313,11 @@ a:visited {
         position: fixed;
         width: 100%;
 
+<<<<<<< HEAD
 /*        background: azure;*/
+=======
+    /*    background: azure;*/
+>>>>>>> parent of fff55ab... window size check in script
     }
     
     .project-title {
@@ -359,6 +358,7 @@ a:visited {
         overflow: hidden;
         height: auto;
     }
+<<<<<<< HEAD
 
     .project-hero {
         height: 80%;
@@ -368,6 +368,11 @@ a:visited {
         object-position: 50% 50%;
         
 /*        background-color: yellow;*/
+=======
+    
+    #image {
+        object-position: 50% 50%;
+>>>>>>> parent of fff55ab... window size check in script
     }
     
     #contact {
