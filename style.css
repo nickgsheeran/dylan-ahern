@@ -310,7 +310,7 @@ a:visited {
         
         padding: 0;
 
-        background: blue;
+/*        background: blue;*/
     }
     
     .project-info {
@@ -318,7 +318,7 @@ a:visited {
         position: fixed;
         width: 100%;
 
-        background: azure;
+/*        background: azure;*/
     }
     
     .project-title {
@@ -361,13 +361,13 @@ a:visited {
     }
 
     .project-hero {
-        height: calc(100% - 85px);
+        height: 80%;
     }
     
     #image {
         object-position: 50% 50%;
         
-        background-color: yellow;
+/*        background-color: yellow;*/
     }
     
     #contact {
@@ -378,9 +378,6 @@ a:visited {
         bottom: 0;
         width: 100%;
         height: 60px;
-
-        z-index: 100;
-        background-color: rgb(247, 248, 248);
     }
     
 }
