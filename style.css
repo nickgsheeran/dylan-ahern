@@ -157,12 +157,15 @@ a:visited {
     background-color: rgb(247, 248, 248);
 }
 
+.project-title, .project-det, .project-num {
+    height: 60px;
+}
+
 .project-title {
     display: inline-block;
     width: 25%;
 
     overflow: hidden;
-    height: 60px;
 
 /*    background: white;*/
 }
@@ -174,7 +177,6 @@ a:visited {
     margin-right: 15px;
     
     overflow: hidden;
-    height: 60px;
     
 /*    background: white;*/
 }
@@ -184,7 +186,6 @@ a:visited {
     width: 12.5%;
 
     overflow: hidden;
-    height: 60px;
 }
 
 .bio-grid {
@@ -312,12 +313,11 @@ a:visited {
         bottom: 0;
         position: fixed;
         width: 100%;
-
-<<<<<<< HEAD
-/*        background: azure;*/
-=======
-    /*    background: azure;*/
->>>>>>> parent of fff55ab... window size check in script
+    }
+    
+    .project-title, .project-det {
+        height: 10%;
+        min-height: 60px;
     }
     
     .project-title {
@@ -328,7 +328,6 @@ a:visited {
         bottom: 0;
         
         overflow: hidden;
-        height: 60px;
 
 /*        background: blue;*/
     }
@@ -343,7 +342,6 @@ a:visited {
         bottom: 0;
 
         overflow: hidden;
-        height: 60px;
 
 /*        background: yellow;*/
     }
@@ -358,7 +356,6 @@ a:visited {
         overflow: hidden;
         height: auto;
     }
-<<<<<<< HEAD
 
     .project-hero {
         height: 80%;
@@ -368,11 +365,6 @@ a:visited {
         object-position: 50% 50%;
         
 /*        background-color: yellow;*/
-=======
-    
-    #image {
-        object-position: 50% 50%;
->>>>>>> parent of fff55ab... window size check in script
     }
     
     #contact {
