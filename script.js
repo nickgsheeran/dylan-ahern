@@ -55,6 +55,7 @@ function append_data() {
     project_year = data_array[project][4];
             
     update_project();
+    load_images();
     console.log('s4');
 }
 

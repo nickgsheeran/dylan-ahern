@@ -28,6 +28,13 @@ a:visited {
     text-decoration: none;
 }
 
+::-moz-selection { 
+    background: rgb(247, 248, 248); 
+}
+::selection { 
+    background: rgb(247, 248, 248); 
+}
+
 #title {
     position: absolute;
     top: 15;
@@ -258,7 +265,7 @@ a:visited {
     }
     
     #title {
-        position: absolute;
+        position: fixed;
         top: 15px;
         width: 100%;
         padding-left: 0;
@@ -271,7 +278,7 @@ a:visited {
     .left {
         display: inline-block;
         box-sizing: border-box;
-        position: absolute;
+        position: fixed;
         
         padding-left: 15px;
         left: 0;
@@ -311,7 +318,7 @@ a:visited {
     
     .project-title {
         display: inline-block;
-        position: absolute;
+        position: fixed;
         width: calc(33.333% - 15px);
         left: 15px;
         bottom: 0;
@@ -324,7 +331,7 @@ a:visited {
 
     .project-det {
         display: inline-block;
-        position: absolute;
+        position: fixed;
         width: 60%;
         margin-left: 0;
         margin-right: 0;
