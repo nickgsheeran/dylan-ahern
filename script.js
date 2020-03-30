@@ -107,6 +107,11 @@ function contact_switch() {
 
 window.onload = function() {
     changeFont();
+    
+    document.body.height = window.innerHeight;
 }
 
+window.onresize = function () {
+    document.body.height = window.innerHeight;
+}
 get_data_array();
