@@ -23,8 +23,10 @@ function load_hash() {
     if (location.hash == undefined) {
         project = 1;
         location.hash = project;
+//        console.log("no input hash");
     } else {
         project = hash_name.replace("#", "");
+//        console.log("loaded input hash")
     }
 }
 
@@ -118,7 +120,6 @@ function contact_switch() {
 window.onload = function() {
     changeFont();
     load_hash();
-    console.log(project);
 }
 
 get_data_array();
