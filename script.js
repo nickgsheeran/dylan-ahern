@@ -22,6 +22,7 @@ function load_hash() {
     
     if (location.hash == undefined) {
         project = 1;
+        location.hash = project;
     } else {
         project = hash_name.replace("#", "");
     }
@@ -69,7 +70,6 @@ function append_data() {
     project_year = data_array[project][4];
             
     update_project();
-    console.log(project, data_array.length);
 }
 
 function update_project() {
