@@ -45,8 +45,8 @@ function get_data_array() {
 	xhttp.send();
 }
 
-function append_data() {
-    image_array1 = data_array[project][0].replace(/https\:\/\/drive.google.com\/open\?id\=/gi, "https://drive.google.com/uc?export=view&id=");
+function append_data() {    
+    image_array1 = data_array[project][0];
     image_array2 = image_array1.split(",");
     
     project_title = data_array[project][1];
