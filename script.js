@@ -8,8 +8,24 @@ var project_title;
 var project_materials;
 var project_dimensions;
 var project_year;
+var hash_name;
 var fontType = ["Georgia", "Palatino Linotype",  "Times New Roman", "Arial", "Arial Black", "Lucida Sans Unicode", "Tahoma", "Trebuchet MS", "Verdana", "Courier New", "Lucida Console"];
 var contact = false;
+
+
+function changeFont() {
+    document.body.style.fontFamily = fontType[Math.floor(Math.random() * fontType.length)];
+}
+
+function load_hash() {
+    hash_name = location.hash;
+    
+    if (location.hash == undefined) {
+        project = 1;
+    } else {
+        project = hash_name.replace("#", "");
+    }
+}
 
 function countdown() {
     if (project <= 1) {
@@ -32,11 +48,9 @@ function countup() {
 }
 
 function get_data_array() {
-	console.log('s2');
  	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-            console.log('s3');
 			data_array = JSON.parse(this.responseText).values;
             append_data();
 	    }
@@ -55,8 +69,7 @@ function append_data() {
     project_year = data_array[project][4];
             
     update_project();
-    load_images();
-    console.log('s4');
+    console.log(project, data_array.length);
 }
 
 function update_project() {
@@ -72,7 +85,8 @@ function update_project() {
     document.getElementById("mat").innerHTML = project_materials;
     document.getElementById("dim").innerHTML = project_dimensions;
     document.getElementById("year").innerHTML = project_year;
-        
+//    hash_name = project_title.replace(" ", "-");
+    window.location.hash = project;        
 }
 
 function change_image() {
@@ -90,10 +104,6 @@ function change_image() {
     document.getElementById("image_count").innerHTML = image_count;
 }
 
-function changeFont() {
-    document.body.style.fontFamily = fontType[Math.floor(Math.random() * fontType.length)];
-}
-
 function contact_switch() {
     contact = !contact;
     if (contact == true) {
@@ -107,6 +117,8 @@ function contact_switch() {
 
 window.onload = function() {
     changeFont();
+    load_hash();
+    console.log(project);
 }
 
 get_data_array();
