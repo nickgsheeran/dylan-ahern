@@ -15,7 +15,6 @@ var hash_name;
 var fontType = ["Georgia", "Palatino Linotype",  "Times New Roman", "Arial", "Arial Black", "Lucida Sans Unicode", "Tahoma", "Trebuchet MS", "Verdana", "Courier New", "Lucida Console"];
 var contact = false;
 
-
 function changeFont() {
     document.body.style.fontFamily = fontType[Math.floor(Math.random() * fontType.length)];
 }
