@@ -29,10 +29,10 @@ a:visited {
 }
 
 ::-moz-selection { 
-    background: rgb(247, 248, 248); 
+    background: none; 
 }
 ::selection { 
-    background: rgb(247, 248, 248); 
+    background: none; 
 }
 
 #title {
@@ -268,7 +268,7 @@ a:visited {
     #title {
         position: fixed;
         top: 15px;
-        width: 100%;
+        width: calc(100% - 30px);
         padding-left: 0;
         padding-right: 0;
         text-indent: 33.333%;

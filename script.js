@@ -20,13 +20,11 @@ function changeFont() {
 function load_hash() {
     hash_name = location.hash;
     
-    if (location.hash == undefined) {
+    if (location.hash == undefined || location.hash == "") {
         project = 1;
         location.hash = project;
-//        console.log("no input hash");
     } else {
         project = hash_name.replace("#", "");
-//        console.log("loaded input hash")
     }
 }
 
@@ -58,7 +56,7 @@ function get_data_array() {
             append_data();
 	    }
   	};
-  	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet1?key=AIzaSyAmcp44cOi9-6XM4EqjCjIQLbj_D__1YPE");
+  	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet1?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
 	xhttp.send();
 }
 
@@ -87,7 +85,6 @@ function update_project() {
     document.getElementById("mat").innerHTML = project_materials;
     document.getElementById("dim").innerHTML = project_dimensions;
     document.getElementById("year").innerHTML = project_year;
-//    hash_name = project_title.replace(" ", "-");
     window.location.hash = project;        
 }
 
