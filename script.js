@@ -1,5 +1,8 @@
 var project = 1;
 var data_array = {}
+var info_array = {};
+var site_info;
+var contact_info;
 var image_array1 = []
 var image_array2 = []
 var i;
@@ -49,7 +52,7 @@ function countup() {
 }
 
 function get_data_array() {
- 	var xhttp = new XMLHttpRequest();
+ 	var xhttp = new XMLHttpRequest();    
   	xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 			data_array = JSON.parse(this.responseText).values;
@@ -57,7 +60,20 @@ function get_data_array() {
 	    }
   	};
   	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet1?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
-	xhttp.send();
+	xhttp.send();    
+}
+
+function get_info_array() {
+    
+    var xhttp2 = new XMLHttpRequest();    
+  	xhttp2.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+			info_array = JSON.parse(this.responseText).values;
+            append_info();
+	    }
+  	};
+  	xhttp2.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet2?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
+	xhttp2.send(); 
 }
 
 function append_data() {    
@@ -70,6 +86,13 @@ function append_data() {
     project_year = data_array[project][4];
             
     update_project();
+}
+
+function append_info() {
+    site_info = info_array[0];
+    contact_info = info_array[1];
+    document.getElementById("contact_info").innerHTML = contact_info;
+    document.getElementById("contact_info").href = contact_info;
 }
 
 function update_project() {
@@ -106,7 +129,7 @@ function change_image() {
 function contact_switch() {
     contact = !contact;
     if (contact == true) {
-        document.getElementById("nav_info").innerHTML = "is an artist in Ridgewood, Queens";
+        document.getElementById("nav_info").innerHTML = site_info;
         document.getElementById("contact").style.display = "block";
     } else if (contact == false) {
         document.getElementById("nav_info").innerHTML = "";
@@ -120,3 +143,4 @@ window.onload = function() {
 }
 
 get_data_array();
+get_info_array();
