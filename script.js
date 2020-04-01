@@ -12,6 +12,7 @@ var project_materials;
 var project_dimensions;
 var project_year;
 var hash_name;
+var hider;
 var fontType = ["Georgia", "Palatino Linotype",  "Times New Roman", "Arial", "Arial Black", "Lucida Sans Unicode", "Tahoma", "Trebuchet MS", "Verdana", "Courier New", "Lucida Console"];
 var contact = false;
 
@@ -127,13 +128,30 @@ function change_image() {
 
 function contact_switch() {
     contact = !contact;
-    if (contact == true) {
+    hider = document.getElementsByClassName('hider');
+    if (contact == true && window.outerWidth <= 768) {
         document.getElementById("nav_info").innerHTML = site_info;
         document.getElementById("contact").style.display = "block";
-    } else if (contact == false) {
+        for (var k = 0; k < hider.length; k++ ) {
+            hider[k].style.display = "none";
+        }
+    } else if (contact == true) {
+        document.getElementById("nav_info").innerHTML = site_info;
+        document.getElementById("contact").style.display = "block";
+    } else if (contact == false && window.outerWidth <= 768) {
         document.getElementById("nav_info").innerHTML = "";
         document.getElementById("contact").style.display = "none";
+        for (var k = 0; k < hider.length; k++ ) {
+            hider[k].style.display = "inline-block";
+        }        
+    } else if (contact == false && window.outerWidth > 768) {
+        document.getElementById("nav_info").innerHTML = "";
+        document.getElementById("contact").style.display = "none";
+        hider[0].style.display = "inline-flex";
+        hider[1].style.display = "inline-block";
+        hider[2].style.display = "inline-flex";
     }
+    
 }
 
 window.onload = function() {
