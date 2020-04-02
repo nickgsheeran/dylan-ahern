@@ -154,6 +154,14 @@ function contact_switch() {
     
 }
 
+window.onresize = function() {
+    if (window.outerWidth > 768) {
+        hider[0].style.display = "inline-flex";
+        hider[2].style.display = "inline-flex";
+        console.log("flex again");
+    }
+}
+
 window.onload = function() {
     changeFont();
     load_hash();
