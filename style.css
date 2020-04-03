@@ -24,6 +24,12 @@ a {
     color: rgb(17, 17, 17);    
 }
 
+.carrot1 {
+    width: 4em;
+    display: inline;
+    position: relative;
+}
+
 a:visited {
     text-decoration: none;
 }
