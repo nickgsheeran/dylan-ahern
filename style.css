@@ -131,7 +131,7 @@ a:visited {
 .project-hero {
     display: inherit;
     width: 100%;
-    height: calc(100% - 85px);
+    height: calc(100% - 105px);
 }
 
 #image {
@@ -164,7 +164,7 @@ a:visited {
 }
 
 .project-title, .project-det, .project-num {
-    height: 60px;
+    height: 80px;
 }
 
 .project-title {
@@ -320,7 +320,7 @@ a:visited {
     
     .project-title, .project-det, #contact {
         height: 10%;
-        min-height: 60px;
+        min-height: 80px;
     }
     
     .project-title {
