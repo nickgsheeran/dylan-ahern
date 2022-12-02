@@ -1,6 +1,11 @@
 var project = 1;
-var data_array = {}
-var info_array = {};
+var pKey = 2;
+
+var data_array;
+var info_array;
+
+// var data_array = {}
+// var info_array = {};
 var site_info;
 var contact_info;
 var image_array1 = []
@@ -15,6 +20,18 @@ var hash_name;
 var hider;
 var fontType = ["Georgia", "Palatino Linotype",  "Times New Roman", "Arial", "Arial Black", "Lucida Sans Unicode", "Tahoma", "Trebuchet MS", "Verdana", "Courier New", "Lucida Console"];
 var contact = false;
+
+function preload() {
+  data_array = loadTable('site-data/projects.csv');
+  data_array = data_array.getRows();
+//   data_array = data_array.splice(0, 2);
+  info_array = loadTable('site-data/info.csv');
+}
+
+function setup() {
+    get_data_array();
+    get_info_array();
+}
 
 function changeFont() {
     document.body.style.fontFamily = fontType[Math.floor(Math.random() * fontType.length)];
@@ -51,46 +68,57 @@ function countup() {
     append_data();
 }
 
+// function get_data_array() {
+//  	var xhttp = new XMLHttpRequest();    
+//   	xhttp.onreadystatechange = function() {
+// 	    if (this.readyState == 4 && this.status == 200) {
+// 			data_array = JSON.parse(this.responseText).values;
+//             append_data();
+// 	    }
+//   	};
+//   	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet1?key=AIzaSyAs7N9y8f0yW3xwJ1wRP--r1rmBWiUXHT8");
+// 	xhttp.send();    
+// }
+
+// function get_info_array() {
+    
+//     var xhttp2 = new XMLHttpRequest();    
+//   	xhttp2.onreadystatechange = function() {
+// 	    if (this.readyState == 4 && this.status == 200) {
+// 			info_array = JSON.parse(this.responseText).values;
+//             append_info();
+// 	    }
+//   	};
+//   	xhttp2.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet2?key=AIzaSyAs7N9y8f0yW3xwJ1wRP--r1rmBWiUXHT8");
+// 	xhttp2.send(); 
+// }
+
 function get_data_array() {
- 	var xhttp = new XMLHttpRequest();    
-  	xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-			data_array = JSON.parse(this.responseText).values;
-            append_data();
-	    }
-  	};
-  	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet1?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
-	xhttp.send();    
+    append_data();
 }
 
 function get_info_array() {
-    
-    var xhttp2 = new XMLHttpRequest();    
-  	xhttp2.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-			info_array = JSON.parse(this.responseText).values;
-            append_info();
-	    }
-  	};
-  	xhttp2.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet2?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
-	xhttp2.send(); 
+    append_info();
 }
 
 function append_data() {    
-    image_array1 = data_array[project][0];
+    pKey = project + 1;
+    
+    image_array1 = data_array[pKey].arr[0];
     image_array2 = image_array1.split(",");
     
-    project_title = data_array[project][1];
-    project_materials = data_array[project][2];
-    project_dimensions = data_array[project][3];
-    project_year = data_array[project][4];
+    project_title = data_array[pKey].arr[1];
+    project_materials = data_array[pKey].arr[2];
+    project_dimensions = data_array[pKey].arr[3];
+    project_year = data_array[pKey].arr[4];
             
     update_project();
 }
 
 function append_info() {
-    site_info = info_array[0];
-    contact_info = info_array[1];
+    site_info = info_array.rows[1].arr[0];
+    console.log(site_info);
+    contact_info = info_array.rows[2].arr[0];;
     document.getElementById("contact_info").innerHTML = contact_info;
     document.getElementById("contact_info").href = contact_info;
 }
@@ -167,5 +195,5 @@ window.onload = function() {
     load_hash();
 }
 
-get_data_array();
-get_info_array();
+// get_data_array();
+// get_info_array();
