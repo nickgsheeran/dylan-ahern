@@ -59,7 +59,7 @@ function get_data_array() {
             append_data();
 	    }
   	};
-  	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet1?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
+  	xhttp.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet1?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
 	xhttp.send();    
 }
 
@@ -72,7 +72,7 @@ function get_info_array() {
             append_info();
 	    }
   	};
-  	xhttp2.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1rUzok6LASw2FVJ1aWlw9ificMSvcH-mAgdNpaxpjPao/values/sheet2?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
+  	xhttp2.open("GET", "https://sheets.googleapis.com/v4/spreadsheets/1fL1EEfWwHi-gBEZY3RCEffBsci07_w9XRmMjQUImFbk/values/sheet2?key=AIzaSyD_5H34oosRt4NL8trNh0XXgyaYxE77IB8");
 	xhttp2.send(); 
 }
 
