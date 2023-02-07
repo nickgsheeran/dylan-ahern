@@ -38,6 +38,10 @@ function changeFont() {
 }
 
 function load_hash() {
+    // console.log("load hash fired");
+    // console.log("project var was:" , project);
+    // console.log("pKey var was:" , pKey);
+
     hash_name = location.hash;
     
     if (location.hash == undefined || location.hash == "") {
@@ -45,12 +49,15 @@ function load_hash() {
         location.hash = project;
     } else {
         project = hash_name.replace("#", "");
+        project = parseInt(project);
     }
+    // console.log("project var is now:" , project);
+    // console.log("pKey var is now:" , pKey);
 }
 
 function countdown() {
     if (project <= 1) {
-        project = data_array.length-1;
+        project = data_array.length-2;
     } else {
         project--;
     }
@@ -59,7 +66,7 @@ function countdown() {
 }
 
 function countup() {
-    if (project >= data_array.length-1) {
+    if (project >= data_array.length-2) {
         project = 1;
     } else {
         project++;
@@ -102,7 +109,9 @@ function get_info_array() {
 }
 
 function append_data() {    
+    // console.log("appended data, pKey was:" , pKey);
     pKey = project + 1;
+    // console.log("pKey is now:" , pKey);
     
     image_array1 = data_array[pKey].arr[0];
     image_array2 = image_array1.split(",");
@@ -116,9 +125,9 @@ function append_data() {
 }
 
 function append_info() {
-    site_info = info_array.rows[1].arr[0];
-    console.log(site_info);
-    contact_info = info_array.rows[2].arr[0];;
+    site_info = info_array.rows[0].arr[0];
+    // console.log(site_info);
+    contact_info = info_array.rows[1].arr[0];
     document.getElementById("contact_info").innerHTML = contact_info;
     document.getElementById("contact_info").href = contact_info;
 }
@@ -144,7 +153,7 @@ function change_image() {
     
     if(slide == image_count) {
         i = 0;
-        console.log("slide limit reached", image_count);
+        // console.log("slide limit reached", image_count);
     } else {
         i++;
     }
@@ -179,14 +188,14 @@ function contact_switch() {
         hider[1].style.display = "inline-block";
         hider[2].style.display = "inline-flex";
     }
-    
+    // console.log("contact switch fired");
 }
 
 window.onresize = function() {
     if (window.outerWidth > 768) {
         hider[0].style.display = "inline-flex";
         hider[2].style.display = "inline-flex";
-        console.log("flex again");
+        // console.log("flex again");
     }
 }
 
